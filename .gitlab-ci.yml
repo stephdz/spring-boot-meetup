@@ -1,0 +1,11 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  script:
+  - rm -rf public && mkdir public && cp "presentation/Débuter avec Spring Boot.html" public/index.html
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
